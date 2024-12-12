@@ -27,10 +27,8 @@ requirements:
     - versioneer
     - pip
   run:
-    - async_timeout >4,<6
-    - typing_extensions >=4.3
     - python
-    - async-timeout <5,>4
+    - async-timeout <6,>4
     - deprecated >=1.2
     - typing-extensions >=4.3
     - packaging >=21,<25
