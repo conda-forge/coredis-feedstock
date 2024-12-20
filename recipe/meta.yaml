@@ -20,7 +20,7 @@ requirements:
     - {{ stdlib("c") }}
   host:
     - python
-    - mypy ==1.7.1
+    - mypy
     - packaging >=21,<24
     - setuptools
     - types-deprecated
