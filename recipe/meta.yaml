@@ -12,7 +12,7 @@ source:
 build:
   skip: true  # [win]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -20,7 +20,7 @@ requirements:
     - {{ stdlib("c") }}
   host:
     - python
-    - mypy ==1.7.1
+    - mypy
     - packaging >=21,<24
     - setuptools
     - types-deprecated
