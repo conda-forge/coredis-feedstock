@@ -28,13 +28,11 @@ requirements:
     - versioneer
     - pip
   run:
-    - async_timeout >4,<6
     - beartype >=0.20
-    - typing_extensions >=4.13
     - python
     - async-timeout <6,>4
     - deprecated >=1.2
-    - typing-extensions >=4.3
+    - typing-extensions >=4.13
     - packaging >=21,<26
     - pympler >1,<2
     - wrapt >=1.1.0,<2
