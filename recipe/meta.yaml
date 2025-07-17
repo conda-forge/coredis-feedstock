@@ -1,5 +1,5 @@
 {% set name = "coredis" %}
-{% set version = "4.24.0" %}
+{% set version = "5.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/coredis-{{ version }}.tar.gz
-  sha256: de9070912b87f4ac2cd6692cfeeeb158bbdcb880169d5a5c7a737e45edd0448e
+  sha256: ffd5e60835ce1140755b4feec3df5e99f06e70f4397789636c4fc192e809dc99
 
 build:
   skip: true  # [win]
@@ -28,6 +28,9 @@ requirements:
     - versioneer
     - pip
   run:
+    - async_timeout >4,<6
+    - beartype >=0.20
+    - typing_extensions >=4.13
     - python
     - async-timeout <6,>4
     - deprecated >=1.2
