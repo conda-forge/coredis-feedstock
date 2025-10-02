@@ -21,7 +21,7 @@ requirements:
   host:
     - python
     - mypy
-    - packaging >=21,<24
+    - packaging
     - hatchling
     - types-deprecated
     - versioneer
