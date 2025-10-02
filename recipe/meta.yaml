@@ -24,7 +24,7 @@ requirements:
     - packaging
     - hatchling
     - types-deprecated
-    - versioneer
+    - hatch-vcs
     - pip
   run:
     - typing_extensions >=4.13
