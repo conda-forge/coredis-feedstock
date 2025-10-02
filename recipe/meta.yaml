@@ -23,7 +23,7 @@ requirements:
     - python
     - mypy
     - packaging >=21,<24
-    - setuptools
+    - hatchling
     - types-deprecated
     - versioneer
     - pip
