@@ -1,5 +1,5 @@
 {% set name = "coredis" %}
-{% set version = "5.2.0" %}
+{% set version = "5.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/coredis-{{ version }}.tar.gz
-  sha256: 85ee9de157cb7304895c121c93f3600e771961ca4fe67fb2de6ce143311324b5
+  sha256: a266457b27277a1083033d39d799a3e3bf568c6db0ba75887546b35e006814e0
 
 build:
   skip: true  # [win]
