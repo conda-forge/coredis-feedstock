@@ -1,23 +1,26 @@
-{% set name = "coredis" %}
-{% set version = "6.6.1" %}
+schema_version: 1
+
+context:
+  name: coredis
+  version: "6.6.1"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/coredis-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/coredis-${{ version }}.tar.gz
   sha256: 7d6dafc2dfb049ef5d835d5e98589fdd9e5ed0502e3caf34e1f0a9dc663b8704
 
 build:
-  skip: true  # [win]
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
+  skip: win
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   build:
-    - {{ compiler('c') }}
-    - {{ stdlib("c") }}
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
   host:
     - python
     - mypy
@@ -40,20 +43,18 @@ requirements:
     - pympler >1,<2
     - wrapt >=1.1.0,<2
 
-test:
-  imports:
-    - coredis
-  commands:
-    - pip check
-  requires:
-    - pip
+tests:
+  - python:
+      imports:
+        - coredis
+      pip_check: true
 
 about:
-  home: https://github.com/alisaifee/coredis
   summary: Python async client for Redis key-value store
-  dev_url: https://github.com/alisaifee/coredis
   license: MIT
   license_file: LICENSE
+  homepage: https://github.com/alisaifee/coredis
+  repository: https://github.com/alisaifee/coredis
 
 extra:
   recipe-maintainers:
