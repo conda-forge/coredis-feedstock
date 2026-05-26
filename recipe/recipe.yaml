@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: coredis
-  version: "6.6.1"
+  version: 6.7.0
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/coredis-${{ version }}.tar.gz
-  sha256: 7d6dafc2dfb049ef5d835d5e98589fdd9e5ed0502e3caf34e1f0a9dc663b8704
+  sha256: 4c18d36c111fcbd95e71aa8ebdcda05b1a0335f51a336fe10fbc1b214015fe4c
 
 build:
-  number: 1
+  number: 0
   skip: win
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -30,19 +30,13 @@ requirements:
     - hatch-vcs
     - pip
   run:
-    - opentelemetry-api >=1.0.0
     - anyio >=4.11.0
     - exceptiongroup >=1.3.0
     - typing_extensions >=4.13
     - beartype >=0.20
     - python
-    - async-timeout <6,>4
     - deprecated >=1.2
-    - typing-extensions >=4.13
     - packaging >=21,<27
-    - pympler >1,<2
-    - wrapt >=1.1.0,<2
-
 tests:
   - python:
       imports:
