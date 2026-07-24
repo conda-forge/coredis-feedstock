@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: coredis
-  version: 6.7.0
+  version: "6.8.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/coredis-${{ version }}.tar.gz
-  sha256: 4c18d36c111fcbd95e71aa8ebdcda05b1a0335f51a336fe10fbc1b214015fe4c
+  sha256: 38df4b8b3a43db193bcbe7a4bdb3c7d6da5636e73800fad790381a13e8c65e33
 
 build:
-  number: 1
+  number: 0
   skip: win
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
