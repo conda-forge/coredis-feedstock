@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: coredis
-  version: "6.8.0"
+  version: "6.9.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/coredis-${{ version }}.tar.gz
-  sha256: 38df4b8b3a43db193bcbe7a4bdb3c7d6da5636e73800fad790381a13e8c65e33
+  sha256: 041a8e93f637deb702b9fdf20656e856069ae53ae17ff51db078934afad0cc52
 
 build:
   number: 0
